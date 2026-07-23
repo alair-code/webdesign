@@ -21,6 +21,10 @@ font-weight: bold; /*Deixa o texto em negrito*/
 .grid-container{
     display: grid; /*Ativar o grid*/
     grid-template-columns: 1fr 2fr; /*Define duas colunas, uma pequena e outra maior*/
-    gap: 20px; /*Adiciona espaçamento entre os itens*/
+    gap: 20px; /*Adiciona espaçamento entre ositens*/
+}
 
+button:hover{
+    background-color: yellow; /*Alterar fundo do botão ao passar o mouse*/
+    cursor:pointer; /*Mostra o cursos de clique*/
 }

@@ -15,5 +15,5 @@ font-weight: bold; /*Deixa o texto em negrito*/
 .container{
     display: flex; /*Ativa	o	Flexbox*/
     justify-content: space-between; /*Espaça os itens uniformemente*/
-    align-items: ;
+    align-items: center; /*	Centraliza os itens verticalmente*/
 }	

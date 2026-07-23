@@ -17,3 +17,9 @@ font-weight: bold; /*Deixa o texto em negrito*/
     justify-content: space-between; /*Espaça os itens uniformemente*/
     align-items: center; /*	Centraliza os itens verticalmente*/
 }	
+
+.grid-container{
+    display: grid; /*Ativar o grid*/
+    grid-template-columns: 1fr 2fr; /*Define duas colunas, uma pequena e outra maior*/
+
+}

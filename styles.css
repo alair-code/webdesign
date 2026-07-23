@@ -4,10 +4,11 @@ font-size: 30px; /*Define o tamanho para 30px*/
 text-align: center; /*Alinha o texto ao centro*/
 }
 
-.destaque {
+.destaque { /*Classes	são	definidas	com	um	ponto	(.)*/
     color:red; /*Tornar texto vermelho*/
 }
 
-#especial {
+#especial {/*IDs	usam	um	sí,bolo	de sustenido(#)*/
 font-weight: bold; /*Deixa o texto em negrito*/
 }
+

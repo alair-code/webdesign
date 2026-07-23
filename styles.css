@@ -28,3 +28,10 @@ button:hover{
     background-color: yellow; /*Alterar fundo do botão ao passar o mouse*/
     cursor:pointer; /*Mostra o cursos de clique*/
 }
+
+.container{
+    display: flex;
+    justify-content: center; /*Centralizar itens horizontalmente*/
+    align-items: center; /*Centralizar itens verticalmente*/
+    gap: 20px; /*Espaçamento entre itens*/
+}

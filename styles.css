@@ -21,5 +21,6 @@ font-weight: bold; /*Deixa o texto em negrito*/
 .grid-container{
     display: grid; /*Ativar o grid*/
     grid-template-columns: 1fr 2fr; /*Define duas colunas, uma pequena e outra maior*/
+    gap: 20px; /*Adiciona espaçamento entre os itens*/
 
 }

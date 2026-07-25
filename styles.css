@@ -35,3 +35,16 @@ button:hover{
     align-items: center; /*Centralizar itens verticalmente*/
     gap: 20px; /*Espaçamento entre itens*/
 }
+
+.container{
+    display: grid;
+    grid-template-columns: 1fr 2fr 1fr; /*Três colunas com proporção diferente*/
+    grid-template-rows: auto 300px; /*Uma linha altomática e outra fixa*/
+    gap: 20px; /*Espaçamento entre as células*/
+}
+
+.container{
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); /*Criar colnas flexiveis*/
+    gap: 20px;
+}

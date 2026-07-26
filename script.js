@@ -2,6 +2,8 @@ const botao = document.getElementById('botao-mensagem'); // Seleciona o botão p
 
 botao.addEventListener('click', function() { // Adiciona um evento de clique ao botão
     alert('Mensagem enviada com sucesso!'); // Exibe um alerta quando o botão é clicado
-    alert('Obrigado por entrar em contato!'); // Exibe outro alerta de agradecimento
 });
 
+//Usar o Java Script para atualizar um título
+const titulo = document.getElementById('titulo'); // Seleciona o título pelo ID
+titulo.textContent = 'Novo Título'; // Atualiza o texto do título   

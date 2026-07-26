@@ -549,7 +549,7 @@ section p {
 
 /* Estiliza o rodapé da página */
 footer {
-    background-color: #1a365d;          /* Fundo azul escuro */
+    background-color: var(--cor-primaria);          /* Fundo azul escuro */
     color: #ffffff;                     /* Texto branco */
     padding: 30px 20px;                 /* Espaçamento interno */
     text-align: center;                 /* Centraliza o texto */
@@ -703,4 +703,13 @@ footer p {
         padding: 12px;           /* Itens do grid menores */
         font-size: 0.9rem;       /* Texto menor */
     }
+}
+
+/*Definir	uma	paleta	de	cores em	variáveis	globais	evita	a	repetição	
+de	valores	ao	longo	do	código	e	facilita alterações	consistentes*/
+:root {
+    --cor-primaria: #2b6cb0; /* Azul */
+    --cor-secundaria: #ecc94b; /* Amarelo */
+    --cor-fundo: #f4f7fa; /* Cinza clarinho */
+    --cor-texto: #2d3748; /* Cinza escuro */
 }

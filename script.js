@@ -20,3 +20,8 @@ document.getElementById('conteudo').appendChild(novaDiv); //Adiciona o parágraf
 //Alterar	a	cor	de	fundo	de	um	elemento	ao	clicar	em um	botão:
 document.getElementById('botao').addEventListener('click', function()	{
      document.getElementById('caixa').style.backgroundColor =	'red'; });
+
+//Para	alterar	o	primeiro	item	de	uma	lista
+const primeiroItem=document.getElementById('lista').cheildrem[0];
+
+    primeiroItem.innerText='Primeiro item atualizado';

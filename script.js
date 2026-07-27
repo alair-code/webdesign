@@ -16,3 +16,7 @@ document.getElementById('titulo').innerText='Texto atualizado com JavaScript';
 const novaDiv = document.creatElement('p')//cria novo parágrafo
 novaDiv.innerText ='Este parágragrafo foi criado dinamicamente!';
 document.getElementById('conteudo').appendChild(novaDiv); //Adiciona o parágrafo a div existente
+
+//Alterar	a	cor	de	fundo	de	um	elemento	ao	clicar	em um	botão:
+document.getElementById('botao').addEventListener('click', function()	{
+     document.getElementById('caixa').style.backgroundColor =	'red'; });

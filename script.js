@@ -8,3 +8,6 @@ botao.addEventListener('click', function() { // Adiciona um evento de clique ao 
 //Usar o Java Script para atualizar um título
 const titulo = document.getElementById('titulo'); // Seleciona o título pelo ID
 titulo.textContent = 'Novo Título'; // Atualiza o texto do título   
+
+//localizar	o	elemento	pelo	seu	id	e	atualizar	seu conteúdo	usando	o	método	inerText
+document.getElementById('titulo').inerText='Texto atualizado com JavaScript';

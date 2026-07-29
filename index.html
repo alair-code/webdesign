@@ -1,64 +1,42 @@
-<!-- ============================================================
-     HTML5 - Estrutura didática de um site profissional
-     ============================================================ -->
+<!-- ================================================================
+     ARQUIVO: index.html
+     DESCRIÇÃO: Estrutura principal da página (HTML5 semântico)
+     ================================================================ -->
 
 <!DOCTYPE html>
 <html lang="pt-br">
-
 <head>
-    <!-- ========================================
-         META DADOS (informações da página)
-         ======================================== -->
-
-    <!-- Título que aparece na aba do navegador -->
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Meu Primeiro Site Profissional</title>
+    <meta name="description" content="Site didático com HTML5 e CSS3 - Aprendendo desenvolvimento web" />
+    <meta name="author" content="Alair" />
 
-    <!-- Codificação de caracteres (acentos, ç, etc.) -->
-    <meta charset="UTF-8">
-
-    <!-- Torna o site responsivo em dispositivos móveis -->
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-    <!-- Descrição para mecanismos de busca (SEO) -->
-    <meta name="description" content="Site didático com HTML5 e CSS3 - Aprendendo desenvolvimento web">
-
-    <!-- Autor da página -->
-    <meta name="author" content="Alair">
-
-    <!-- ========================================
-         CSS EXTERNO (styles.css)
-         ======================================== -->
-    <link rel="stylesheet" href="styles.css">
-
+    <!-- ====== FOLHA DE ESTILOS EXTERNA ====== -->
+    <link rel="stylesheet" href="styles.css" />
 </head>
-
 <body>
 
-    <!-- ==========================================================
-         CONTEÚDO PRINCIPAL (wrapper)
-         📦 WRAPPER em 4 linhas
-
-        Wrapper é uma div que envolve todo o conteúdo da página para centralizar e limitar a largura (ex: 1200px), evitando que o texto fique esticado em telas grandes.
-
-        Ele tem fundo branco, bordas arredondadas e sombra para destacar o conteúdo do fundo cinza da página, dando um visual mais profissional.
-
-        No código, ele é criado com <div class="wrapper"> e estilizado com max-width, margin: auto (via flexbox) e border-radius.
-
-        Resumindo: é a "caixa" que organiza e embrulha todo o site, como uma moldura que valoriza o conteúdo! 🖼️
-         ========================================================== -->
+    <!-- ================================================================
+         WRAPPER: container principal que limita a largura e centraliza
+         ================================================================ -->
     <div class="wrapper">
 
-        <!-- ==========================================================
+        <!-- ============================================================
              CABEÇALHO (HEADER)
-             ========================================================== -->
+             - Apresenta o título principal e uma descrição.
+             - Usa gradiente suave para destaque.
+             ============================================================ -->
         <header>
             <h1>🚀 Meu Primeiro Site</h1>
             <p>Aprendendo HTML e CSS de forma didática e profissional</p>
         </header>
 
-        <!-- ==========================================================
+        <!-- ============================================================
              MENU DE NAVEGAÇÃO (NAV)
-             ========================================================== -->
+             - Links internos que levam às seções da página.
+             - Estilizado com flexbox para alinhamento central.
+             ============================================================ -->
         <nav>
             <ul class="menu">
                 <li><a href="#sobre">📖 Sobre</a></li>
@@ -67,14 +45,17 @@
             </ul>
         </nav>
 
-        <!-- ==========================================================
+        <!-- ============================================================
              CONTEÚDO PRINCIPAL (MAIN)
-             ========================================================== -->
+             - Agrupa todas as seções da página.
+             ============================================================ -->
         <main>
 
-            <!-- ==========================================================
-                 SEÇÃO: SOBRE
-                 ========================================================== -->
+            <!-- =========================================================
+                 SEÇÃO SOBRE
+                 - Explica o propósito do site.
+                 - Usa <strong> para destacar termos importantes.
+                 ========================================================= -->
             <section id="sobre">
                 <h2>Sobre Nós</h2>
                 <p>
@@ -89,51 +70,73 @@
                 </p>
             </section>
 
-            <!-- ==========================================================
-                 SEÇÃO: SERVIÇOS
-                 ========================================================== -->
+            <!-- =========================================================
+                 SEÇÃO SERVIÇOS
+                 - Apresenta os serviços em cards (grid responsivo).
+                 - Cada card tem um ícone, título e descrição.
+                 ========================================================= -->
             <section id="servicos">
                 <h2>Nossos Serviços</h2>
                 <p>Confira o que podemos fazer por você:</p>
 
-                <ul class="lista-servicos">
-                    <li><strong>🌐 Desenvolvimento Web:</strong> Sites institucionais, lojas virtuais e sistemas.</li>
-                    <li><strong>📱 Design Responsivo:</strong> Layouts que funcionam em qualquer tela.</li>
-                    <li><strong>⚡ Otimização SEO:</strong> Sites que aparecem no Google.</li>
-                    <li><strong>🔧 Manutenção:</strong> Suporte e atualizações contínuas.</li>
-                </ul>
-            </section>
-
-            <!-- ==========================================================
-                 SEÇÃO: IMAGEM (exemplo)
-                 ========================================================== -->
-            <section>
-                <div class="imagem-container">
-                    <img src="img/alairinformatica.png"
-                    alt="Logo da empresa Alair Informática"
-                    title="Alair Informática - Soluções em TI"
-                    width="300"
-                    height="auto">
+                <div class="cards-servicos">
+                    <div class="card">
+                        <div class="card-icon">🌐</div>
+                        <h3>Desenvolvimento Web</h3>
+                        <p>Sites institucionais, lojas virtuais e sistemas.</p>
+                    </div>
+                    <div class="card">
+                        <div class="card-icon">📱</div>
+                        <h3>Design Responsivo</h3>
+                        <p>Layouts que funcionam em qualquer tela.</p>
+                    </div>
+                    <div class="card">
+                        <div class="card-icon">⚡</div>
+                        <h3>Otimização SEO</h3>
+                        <p>Sites que aparecem no Google.</p>
+                    </div>
+                    <div class="card">
+                        <div class="card-icon">🔧</div>
+                        <h3>Manutenção</h3>
+                        <p>Suporte e atualizações contínuas.</p>
+                    </div>
                 </div>
             </section>
 
-            <!-- ==========================================================
-                 SEÇÃO: EXEMPLOS DE CLASSES E IDS
-                 ========================================================== -->
+            <!-- =========================================================
+                 SEÇÃO IMAGEM
+                 - Exibe uma logo com efeito hover.
+                 - A tag <img> possui atributos alt, title e dimensões.
+                 ========================================================= -->
+            <section>
+                <div class="imagem-container">
+                    <img src="img/alairinformatica.png"
+                         alt="Logo da empresa Alair Informática"
+                         title="Alair Informática - Soluções em TI"
+                         width="300"
+                         height="auto" />
+                </div>
+            </section>
+
+            <!-- =========================================================
+                 SEÇÃO EXEMPLOS DE CLASSES E IDS
+                 - Mostra a diferença entre classe (.) e id (#).
+                 - Também exibe um grid com itens estilizados.
+                 ========================================================= -->
             <section class="exemplos">
                 <h2>Exemplos de Estilização</h2>
 
-                <!-- Classe .destaque (vermelho) -->
+                <!-- CLASSE .destaque: aplica cor vermelha e fundo suave -->
                 <p class="destaque">
                     🔴 <strong>Texto em destaque:</strong> Esta é uma classe CSS que deixa o texto vermelho.
                 </p>
 
-                <!-- ID #especial (negrito) -->
+                <!-- ID #especial: aplica fundo azul e negrito -->
                 <p id="especial">
                     ⭐ <strong>Texto especial:</strong> Este é um ID que deixa o texto em negrito.
                 </p>
 
-                <!-- Classe .grid-container (grid) -->
+                <!-- Grid de exemplo com 4 itens -->
                 <div class="grid-container">
                     <div class="grid-item">Item 1</div>
                     <div class="grid-item">Item 2</div>
@@ -142,72 +145,100 @@
                 </div>
             </section>
 
-            <!-- ==========================================================
-                 SEÇÃO: CONTATO
-                 ========================================================== -->
+            <!-- =========================================================
+                 SEÇÃO CONTATO
+                 - Informações de contato e um botão interativo.
+                 ========================================================= -->
             <section id="contato">
                 <h2>Contato</h2>
                 <p>
-                    <strong>📧 E-mail:</strong> contato@meusite.com<br>
-                    <strong>📞 Telefone:</strong> (11) 99999-9999<br>
+                    <strong>📧 E-mail:</strong> contato@meusite.com<br />
+                    <strong>📞 Telefone:</strong> (11) 99999-9999<br />
                     <strong>📍 Endereço:</strong> Rua Exemplo, 123 - São Paulo - SP
                 </p>
-                <!-- Botão com efeito hover -->
+                <!-- Botão que dispara um alerta via JavaScript -->
                 <button class="btn-contato" id="botao-mensagem">Enviar Mensagem</button>
             </section>
 
-            <!-- ==========================================================
-                 SEÇÃO: TÍTULO ATUALIZADO PELO JAVASCRIPT
-                 ========================================================== -->
-                 
+            <!-- =========================================================
+                 SEÇÃO TÍTULO ATUALIZADO (JS)
+                 - Este <h2> será modificado dinamicamente pelo script.
+                 ========================================================= -->
             <section>
-                <h2 id="titulo">Título Padrão</h2> <!--Este título será atualizado pelo JavaScript-->
+                <h2 id="titulo">Título Padrão</h2>
             </section>
 
-             <!-- ==========================================================
-             Localizar o	elemento	pelo	seu	id	e	atualizar	seu conteúdo	usando	o	método
-             ========================================================== -->
-
-           <!-- ==========================================================
-             Criar	um	novo parágrafo	e	adicioná-lo	a	uma	seção	existente
-             ========================================================== -->
-             <section>
+            <!-- =========================================================
+                 SEÇÃO MUDAR COR (interatividade)
+                 - Uma caixa colorida que muda de cor ao clicar no botão.
+                 ========================================================= -->
+            <section>
+                <h2>Alterar cor da caixa</h2>
+                <!-- Container onde um parágrafo será inserido via JS -->
                 <div id="conteudo"></div>
+                <!-- Botão para alternar a cor -->
+                <button id="botao">Mudar cor</button>
+                <!-- Caixa que terá a cor alterada -->
+                <div id="caixa" style="width: 100px; height: 100px; background-color: blue; border-radius: 12px; margin: 15px auto; transition: background-color 0.4s ease;"></div>
+            </section>
 
-                <!--Alterar	a	cor	de	fundo	de	um	elemento	ao	clicar	em um	botão:-->
-                <button	id=“botao”>Mudar	cor</button> 
-                <div id=“caixa“	style=”width: 100px; height: 100px; background-color: blue;“></div>
-             </section>
-
-             <section>
-                 <!--Para	alterar	o	primeiro	item	de	uma	lista-->
+            <!-- =========================================================
+                 SEÇÃO LISTA (primeiro item alterado)
+                 - Lista não ordenada cujo primeiro item é modificado pelo JS.
+                 ========================================================= -->
+            <section>
+                <h2>Lista de itens</h2>
                 <ul id="lista">
                     <li>Item 1</li>
                     <li>Item 2</li>
                     <li>Item 3</li>
                 </ul>
-             </section>
+            </section>
+
+            <!-- =========================================================
+                 SEÇÃO RESUMO DOS ELEMENTOS (didático)
+                 - Mostra os principais elementos HTML usados na página.
+                 - Organizado em grid para fácil visualização.
+                 ========================================================= -->
+            <section class="resumo-didatico">
+                <h2>📚 Resumo dos Elementos Utilizados</h2>
+                <div class="resumo-grid">
+                    <div class="resumo-item"><strong>&lt;header&gt;</strong> cabeçalho</div>
+                    <div class="resumo-item"><strong>&lt;nav&gt;</strong> menu</div>
+                    <div class="resumo-item"><strong>&lt;main&gt;</strong> conteúdo</div>
+                    <div class="resumo-item"><strong>&lt;section&gt;</strong> seção</div>
+                    <div class="resumo-item"><strong>&lt;footer&gt;</strong> rodapé</div>
+                    <div class="resumo-item"><strong>&lt;h1&gt;–&lt;h6&gt;</strong> títulos</div>
+                    <div class="resumo-item"><strong>&lt;p&gt;</strong> parágrafo</div>
+                    <div class="resumo-item"><strong>&lt;ul&gt;</strong> lista não ordenada</div>
+                    <div class="resumo-item"><strong>&lt;li&gt;</strong> item de lista</div>
+                    <div class="resumo-item"><strong>&lt;a&gt;</strong> link</div>
+                    <div class="resumo-item"><strong>&lt;img&gt;</strong> imagem</div>
+                    <div class="resumo-item"><strong>&lt;div&gt;</strong> container</div>
+                    <div class="resumo-item"><strong>&lt;button&gt;</strong> botão</div>
+                    <div class="resumo-item"><strong>class</strong> seletor múltiplo</div>
+                    <div class="resumo-item"><strong>id</strong> identificador único</div>
+                    <div class="resumo-item"><strong>style</strong> CSS inline</div>
+                </div>
+            </section>
 
         </main>
 
-        <!-- ==========================================================
+        <!-- ============================================================
              RODAPÉ (FOOTER)
-             ========================================================== -->
-
-
+             - Informações de direitos autorais e créditos.
+             ============================================================ -->
         <footer>
             <p>
                 © 2025 Meu Primeiro Site. Todos os direitos reservados.
-                <br>
+                <br />
                 Desenvolvido com ❤️ para aprendizado de HTML e CSS.
             </p>
-        
         </footer>
 
     </div>
-    <!-- Fim do wrapper -->
 
+    <!-- ====== SCRIPT JAVASCRIPT EXTERNO ====== -->
     <script src="script.js"></script>
-
 </body>
 </html>

@@ -1,717 +1,467 @@
-/* ============================================================
-     CSS - Estilos do site "Meu Primeiro Site"
-     ============================================================
-     Este arquivo contém todos os estilos organizados por seção,
-     com comentários didáticos para facilitar o aprendizado.
-     
-     📌 DICA: Cada propriedade CSS tem um comentário explicando
-     o que ela faz e por que está sendo usada.
-     ============================================================ */
+/* ====================================================================
+   ARQUIVO: styles.css
+   DESCRIÇÃO: Estilos visuais para a página (design moderno e responsivo)
+   ==================================================================== */
 
+/* ================================================================
+   SEÇÃO 1: RESET E CONFIGURAÇÕES GLOBAIS
+   ================================================================ */
 
-/* ==========================================================
-     🧹 RESET BÁSICO (remove estilos padrão do navegador)
-     ========================================================== */
-
-/*
-   O seletor "*" (asterisco) seleciona TODOS os elementos da página.
-   Isso é chamado de "reset" porque remove as margens e paddings
-   que cada navegador aplica de forma diferente.
-*/
+/* Remove margens/paddings padrão e define box-sizing */
 * {
-    margin: 0;                    /* Remove todas as margens externas */
-    padding: 0;                   /* Remove todos os espaçamentos internos */
-    box-sizing: border-box;       /* Faz com que largura/altura incluam bordas e paddings */
-                                  /* Ex: se width: 100px, com border: 5px, o conteúdo terá 90px */
-}
-
-
-/* ==========================================================
-     🎨 ESTILOS GLOBAIS (aplicados ao corpo da página)
-     ========================================================== */
-
-/* O seletor "body" aplica estilos a todo o conteúdo da página */
-body {
-    /* Define a família de fontes (fallback em caso de falha) */
-    /* "Segoe UI" é a primeira opção, se não tiver, usa Tahoma, etc. */
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-
-    /* Cor de fundo da página (cinza bem clarinho) */
-    background-color: #f4f7fa;
-
-    /* Cor do texto principal (cinza escuro) */
-    color: #2d3748;
-
-    /* Espaçamento interno entre o conteúdo e a borda da página */
-    padding: 20px;
-
-    /* Altura mínima: ocupa 100% da altura da tela (viewport height) */
-    min-height: 100vh;
-
-    /* 
-       display: flex → ativa o modelo de layout Flexbox
-       justify-content: center → centraliza horizontalmente
-       align-items: flex-start → alinha no topo verticalmente
-    */
-    display: flex;
-    justify-content: center;    /* Centraliza os itens no eixo horizontal */
-    align-items: flex-start;    /* Alinha os itens no topo do eixo vertical */
-}
-
-
-/* ==========================================================
-     📦 WRAPPER (container principal que agrupa tudo)
-     ========================================================== */
-
-/* A classe .wrapper envolve todo o conteúdo da página */
-.wrapper {
-    /* Largura máxima de 1200px (bom para telas grandes) */
-    max-width: 1200px;
-
-    /* Ocupa 100% da largura disponível (até o limite do max-width) */
-    width: 100%;
-
-    /* Fundo branco para destacar o conteúdo */
-    background-color: #ffffff;
-
-    /* Bordas arredondadas em todos os cantos (16px) */
-    border-radius: 16px;
-
-    /* 
-       Sombra suave para dar profundidade:
-       - 0 → deslocamento horizontal (nenhum)
-       - 10px → deslocamento vertical (para baixo)
-       - 30px → desfoque (suavidade)
-       - rgba(0,0,0,0.08) → cor preta com 8% de opacidade
-    */
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
-
-    /* Espaçamento interno (0 para o wrapper, pois os filhos terão) */
+    margin: 0;
     padding: 0;
-
-    /* 
-       overflow: hidden → esconde qualquer conteúdo que ultrapasse
-       as bordas arredondadas, mantendo o design limpo
-    */
-    overflow: hidden;
+    box-sizing: border-box;
 }
 
+/* Estilos base do corpo da página */
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: #f0f4f8;       /* fundo suave */
+    color: #1a202c;
+    padding: 20px;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+}
 
-/* ==========================================================
-     🏠 CABEÇALHO (HEADER)
-     ========================================================== */
+/* ================================================================
+   SEÇÃO 2: WRAPPER (container principal)
+   ================================================================ */
 
-/* O seletor "header" estiliza o cabeçalho do site */
+/* Caixa branca que centraliza o conteúdo e aplica sombra */
+.wrapper {
+    max-width: 1200px;
+    width: 100%;
+    background: #ffffff;
+    border-radius: 24px;
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.08);
+    overflow: hidden;          /* garante que os cantos arredondados sejam respeitados */
+}
+
+/* ================================================================
+   SEÇÃO 3: CABEÇALHO (HEADER)
+   ================================================================ */
+
 header {
-    /* 
-       Fundo com gradiente (transição suave entre duas cores):
-       135deg → diagonal da esquerda para direita
-       #1a365d (azul escuro) → #2b6cb0 (azul médio)
-    */
-    background: linear-gradient(135deg, #1a365d, #2b6cb0);
-
-    /* Cor do texto (branco) */
-    color: #ffffff;
-
-    /* Espaçamento interno: 40px em cima/baixo, 30px nas laterais */
-    padding: 40px 30px;
-
-    /* Centraliza o texto horizontalmente */
+    background: linear-gradient(145deg, #1a365d, #2b6cb0);
+    color: white;
+    padding: 50px 30px 40px;
     text-align: center;
 }
 
-/* Título principal dentro do cabeçalho (h1) */
 header h1 {
-    font-size: 2.5rem;           /* Tamanho da fonte (2.5x o tamanho padrão) */
-    font-weight: 700;            /* Peso da fonte (700 = negrito) */
-    letter-spacing: -0.5px;      /* Espaçamento entre letras (negativo = mais juntas) */
-    margin-bottom: 8px;          /* Margem inferior para separar do subtítulo */
+    font-size: 2.8rem;
+    font-weight: 700;
+    letter-spacing: -1px;
+    margin-bottom: 8px;
 }
 
-/* Subtítulo dentro do cabeçalho (p) */
 header p {
-    font-size: 1.2rem;           /* Tamanho da fonte */
-    opacity: 0.9;                /* Opacidade (90% visível, 10% transparente) */
+    font-size: 1.2rem;
+    opacity: 0.9;
 }
 
+/* ================================================================
+   SEÇÃO 4: MENU DE NAVEGAÇÃO (NAV)
+   ================================================================ */
 
-/* ==========================================================
-     🧭 MENU DE NAVEGAÇÃO (NAV)
-     ========================================================== */
-
-/* Estiliza a barra de navegação */
 nav {
-    /* Fundo cinza clarinho */
-    background-color: #edf2f7;
-
-    /* Espaçamento interno: 15px em cima/baixo, 20px nas laterais */
-    padding: 15px 20px;
-
-    /* Borda inferior para separar do conteúdo */
-    /* 3px de espessura, sólida, cor azul */
+    background: #edf2f7;
+    padding: 12px 20px;
     border-bottom: 3px solid #2b6cb0;
 }
 
-/* Classe .menu para a lista de navegação */
 .menu {
-    /* Remove os marcadores (bolinhas) da lista */
     list-style: none;
-
-    /* 
-       display: flex → ativa o Flexbox
-       Isso transforma os itens da lista em uma linha horizontal
-    */
     display: flex;
-
-    /* Centraliza os itens horizontalmente */
     justify-content: center;
-
-    /* Espaçamento entre os itens (30px) */
-    gap: 30px;
-
-    /* Remove espaçamento padrão da lista */
+    gap: 40px;
     padding: 0;
     margin: 0;
-
-    /* 
-       flex-wrap: wrap → permite que os itens "quebrem" para a linha de baixo
-       caso não caibam na largura da tela
-    */
-    flex-wrap: wrap;
+    flex-wrap: wrap;          /* quebra para mobile */
 }
 
-/* Cada item da lista do menu (li) */
-.menu li {
-    font-size: 1.1rem;           /* Tamanho da fonte */
-}
-
-/* Links (a) dentro do menu */
 .menu li a {
-    /* Remove o sublinhado padrão dos links */
     text-decoration: none;
-
-    /* Cor azul escuro */
     color: #1a365d;
-
-    /* 
-       display: block → transforma o link em um bloco
-       Isso aumenta a área de clique (o link ocupa todo o espaço do padding)
-    */
-    display: block;
-
-    /* Espaçamento interno: 10px em cima/baixo, 20px nas laterais */
-    padding: 10px 20px;
-
-    /* Bordas arredondadas (8px) */
-    border-radius: 8px;
-
-    /* Peso da fonte (600 = semi-negrito) */
     font-weight: 600;
-
-    /* 
-       transition: all 0.3s ease → animação suave
-       all → todas as propriedades que mudarem
-       0.3s → duração da animação (0.3 segundos)
-       ease → tipo de aceleração (começa devagar, acelera, termina devagar)
-    */
+    padding: 10px 20px;
+    border-radius: 30px;
     transition: all 0.3s ease;
 }
 
-/* 
-   Efeito ao passar o mouse sobre o link (pseudo-classe :hover)
-   :hover é ativado quando o mouse está sobre o elemento
-*/
+/* Efeito hover: fundo azul, texto branco e leve elevação */
 .menu li a:hover {
-    /* Fundo azul (muda de cor) */
-    background-color: #2b6cb0;
-
-    /* Texto branco (muda de cor) */
-    color: #ffffff;
-
-    /* 
-       transform: translateY(-2px) → move o elemento 2px para cima
-       Isso cria um efeito de "elevação" (flutuar)
-    */
+    background: #2b6cb0;
+    color: white;
     transform: translateY(-2px);
-
-    /* 
-       Sombra que aparece ao passar o mouse:
-       0 → horizontal (nenhum)
-       4px → vertical (para baixo)
-       12px → desfoque
-       rgba(43,108,176,0.3) → azul com 30% de opacidade
-    */
-    box-shadow: 0 4px 12px rgba(43, 108, 176, 0.3);
+    box-shadow: 0 6px 16px rgba(43, 108, 176, 0.3);
 }
 
+/* ================================================================
+   SEÇÃO 5: CONTEÚDO PRINCIPAL (MAIN)
+   ================================================================ */
 
-/* ==========================================================
-     📄 CONTEÚDO PRINCIPAL (MAIN)
-     ========================================================== */
-
-/* Estiliza a tag <main> (conteúdo principal) */
 main {
-    /* Espaçamento interno: 40px em cima/baixo, 30px nas laterais */
     padding: 40px 30px;
 }
 
-/* Cada seção <section> dentro do main */
+/* Todas as seções ganham espaçamento inferior */
 section {
-    /* Margem inferior de 40px para separar as seções */
-    margin-bottom: 40px;
+    margin-bottom: 50px;
+    text-align: center;       /* centraliza títulos e textos */
 }
 
-/* 
-   Seletor :last-child → seleciona o último filho do elemento pai
-   Neste caso, a última seção não terá margem inferior
-   Isso evita espaçamento extra no final
-*/
 section:last-child {
     margin-bottom: 0;
 }
 
+/* ================================================================
+   SEÇÃO 6: TÍTULOS H2
+   ================================================================ */
 
-/* ==========================================================
-     📝 TÍTULOS (H2)
-     ========================================================== */
-
-/* 
-   REGRA: h2
-   Estiliza todos os títulos de nível 2 da página
-*/
 h2 {
-    color: #2b6cb0;              /* Cor azul */
-    font-size: 30px;             /* Tamanho da fonte (30 pixels) */
-    text-align: center;          /* Alinha o texto ao centro */
-    margin-bottom: 20px;         /* Margem inferior (espaço abaixo) */
-    padding-bottom: 12px;        /* Espaço interno abaixo (entre texto e borda) */
-    border-bottom: 4px solid #2b6cb0; /* Borda inferior azul de 4px */
-    
-    /* 
-       display: inline-block → faz com que a borda só ocupe o tamanho do texto
-       Se fosse block, a borda ocuparia a largura toda da tela
-    */
-    display: inline-block;
+    color: #2b6cb0;
+    font-size: 2rem;
+    text-align: center;
+    margin-bottom: 20px;
+    padding-bottom: 12px;
+    border-bottom: 4px solid #2b6cb0;
+    display: inline-block;    /* permite que a borda fique apenas sob o texto */
 }
 
-/* 
-   Centraliza o h2 dentro da seção
-   (a seção tem text-align: center, então o h2 fica centralizado)
-*/
-section {
-    text-align: center;          /* Centraliza todos os elementos inline/inline-block */
-}
+/* ================================================================
+   SEÇÃO 7: PARÁGRAFOS
+   ================================================================ */
 
-/* Mas os parágrafos devem ficar alinhados à esquerda */
 section p {
-    text-align: left;            /* Alinha o texto à esquerda */
-}
-
-
-/* ==========================================================
-     📃 PARÁGRAFOS
-     ========================================================== */
-
-/* Estiliza os parágrafos (<p>) dentro de seções */
-section p {
-    font-size: 1.1rem;           /* Tamanho da fonte */
-    line-height: 1.8;            /* Altura da linha (espaçamento entre linhas) */
-    color: #4a5568;              /* Cor cinza escuro */
-    margin-bottom: 15px;         /* Margem inferior entre parágrafos */
-}
-
-
-/* ==========================================================
-     📋 LISTA DE SERVIÇOS
-     ========================================================== */
-
-/* Classe .lista-servicos para a lista de serviços */
-.lista-servicos {
-    /* Remove os marcadores (bolinhas) da lista */
-    list-style: none;
-
-    /* Alinha o texto à esquerda */
+    font-size: 1.1rem;
+    line-height: 1.8;
+    color: #2d3748;
+    margin-bottom: 16px;
     text-align: left;
-
-    /* Remove espaçamento interno padrão */
-    padding: 0;
-
-    /* Margem de 20px em cima e embaixo */
-    margin: 20px 0;
+    max-width: 700px;
+    margin-left: auto;
+    margin-right: auto;
 }
 
-/* Cada item da lista de serviços */
-.lista-servicos li {
-    /* Espaçamento interno de 12px em cima e embaixo */
-    padding: 12px 0;
+/* ================================================================
+   SEÇÃO 8: CARDS DE SERVIÇOS (GRID RESPONSIVO)
+   ================================================================ */
 
-    /* Borda inferior suave (cinza claro) */
-    border-bottom: 1px solid #e2e8f0;
-
-    /* Tamanho da fonte */
-    font-size: 1.05rem;
-
-    /* Cor do texto */
-    color: #4a5568;
+.cards-servicos {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 24px;
+    margin-top: 20px;
 }
 
-/* 
-   :last-child → seleciona o último item da lista
-   Remove a borda do último item para não ficar uma linha extra
-*/
-.lista-servicos li:last-child {
-    border-bottom: none;
-}
-
-
-/* ==========================================================
-     🖼️ IMAGEM
-     ========================================================== */
-
-/* Container da imagem (div que envolve a img) */
-.imagem-container {
-    text-align: center;          /* Centraliza a imagem horizontalmente */
-    margin: 30px 0;              /* Margem de 30px em cima e embaixo */
-}
-
-/* Estiliza a imagem dentro do container */
-.imagem-container img {
-    /* 
-       max-width: 100% → a imagem nunca ultrapassa a largura do container
-       Isso torna a imagem RESPONSIVA
-    */
-    max-width: 100%;
-
-    /* 
-       height: auto → a altura se ajusta automaticamente
-       Mantém a proporção original da imagem
-    */
-    height: auto;
-
-    /* Bordas arredondadas (12px) */
-    border-radius: 12px;
-
-    /* 
-       Sombra suave:
-       0 → horizontal (nenhum)
-       4px → vertical (para baixo)
-       16px → desfoque
-       rgba(0,0,0,0.12) → preto com 12% de opacidade
-    */
-    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.12);
-
-    /* Borda branca de 4px ao redor da imagem */
-    border: 4px solid #ffffff;
-
-    /* 
-       Transição suave para quando a imagem sofrer alterações
-       transform e box-shadow terão animação de 0.3s
-    */
+.card {
+    background: #f7fafc;
+    padding: 24px 16px;
+    border-radius: 16px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.04);
     transition: transform 0.3s ease, box-shadow 0.3s ease;
+    text-align: center;
 }
 
-/* Efeito ao passar o mouse sobre a imagem */
+.card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 12px 30px rgba(43, 108, 176, 0.12);
+}
+
+.card-icon {
+    font-size: 2.8rem;
+    margin-bottom: 12px;
+}
+
+.card h3 {
+    font-size: 1.2rem;
+    color: #1a365d;
+    margin-bottom: 8px;
+}
+
+.card p {
+    font-size: 0.95rem;
+    color: #4a5568;
+    text-align: center;
+    margin: 0;
+}
+
+/* ================================================================
+   SEÇÃO 9: IMAGEM
+   ================================================================ */
+
+.imagem-container {
+    text-align: center;
+    margin: 30px 0;
+}
+
+.imagem-container img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 16px;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
+    border: 4px solid white;
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
 .imagem-container img:hover {
-    /* 
-       scale(1.03) → aumenta a imagem em 3%
-       Isso cria um efeito de "zoom" suave
-    */
     transform: scale(1.03);
-
-    /* Aumenta a sombra para dar mais destaque */
-    box-shadow: 0 8px 30px rgba(43, 108, 176, 0.25);
+    box-shadow: 0 12px 36px rgba(43, 108, 176, 0.2);
 }
 
+/* ================================================================
+   SEÇÃO 10: CLASSE .DESTAQUE (texto vermelho)
+   ================================================================ */
 
-/* ==========================================================
-     🔴 CLASSE .DESTAQUE (texto vermelho)
-     ========================================================== */
-
-/* 
-   REGRA: .destaque
-   - É uma CLASSE (identificada pelo ponto .)
-   - Pode ser usada em vários elementos
-   - Cor: vermelho para destacar informações importantes
-*/
 .destaque {
-    color: #e53e3e;              /* Vermelho */
-    font-weight: 600;            /* Semi-negrito */
-    padding: 15px 20px;          /* Espaçamento interno */
-    background-color: #fff5f5;   /* Fundo vermelho bem clarinho */
-    border-left: 5px solid #e53e3e; /* Borda lateral vermelha (esquerda) */
-    border-radius: 8px;          /* Bordas arredondadas */
-    margin: 20px 0;              /* Margem vertical */
-    text-align: left;            /* Alinha o texto à esquerda */
+    color: #e53e3e;
+    font-weight: 600;
+    padding: 16px 24px;
+    background: #fff5f5;
+    border-left: 6px solid #e53e3e;
+    border-radius: 8px;
+    margin: 20px 0;
+    text-align: left;
+    max-width: 700px;
+    margin-left: auto;
+    margin-right: auto;
 }
 
+/* ================================================================
+   SEÇÃO 11: ID #ESPECIAL (negrito e fundo azul)
+   ================================================================ */
 
-/* ==========================================================
-     ⭐ ID #ESPECIAL (texto em negrito)
-     ========================================================== */
-
-/* 
-   REGRA: #especial
-   - É um ID (identificado pelo #)
-   - Deve ser ÚNICO na página (usado apenas uma vez)
-   - Peso: negrito (bold)
-*/
 #especial {
-    font-weight: bold;           /* Texto em negrito */
-    padding: 15px 20px;          /* Espaçamento interno */
-    background-color: #ebf8ff;   /* Fundo azul clarinho */
-    border-left: 5px solid #2b6cb0; /* Borda lateral azul (esquerda) */
-    border-radius: 8px;          /* Bordas arredondadas */
-    margin: 20px 0;              /* Margem vertical */
-    text-align: left;            /* Alinha o texto à esquerda */
-    color: #1a365d;              /* Cor azul escuro */
+    font-weight: bold;
+    padding: 16px 24px;
+    background: #ebf8ff;
+    border-left: 6px solid #2b6cb0;
+    border-radius: 8px;
+    margin: 20px 0;
+    text-align: left;
+    color: #1a365d;
+    max-width: 700px;
+    margin-left: auto;
+    margin-right: auto;
 }
 
+/* ================================================================
+   SEÇÃO 12: GRID CONTAINER (exemplo de grid com 2 colunas)
+   ================================================================ */
 
-/* ==========================================================
-     📐 CLASSE .GRID-CONTAINER (layout em grade)
-     ========================================================== */
-
-/* 
-   REGRA: .grid-container
-   - display: grid → ativa o CSS Grid Layout
-   - grid-template-columns: 1fr 2fr → define 2 colunas
-     1fr = 1 parte (menor)
-     2fr = 2 partes (maior)
-   - gap: 20px → espaçamento entre os itens
-*/
 .grid-container {
-    display: grid;                      /* Ativa o Grid Layout */
-    grid-template-columns: 1fr 2fr;     /* Define 2 colunas (uma menor, uma maior) */
-    gap: 20px;                          /* Espaçamento entre os itens */
-    margin: 20px 0;                     /* Margem vertical */
-    padding: 20px;                      /* Espaçamento interno */
-    background-color: #f7fafc;          /* Fundo cinza clarinho */
-    border-radius: 12px;                /* Bordas arredondadas */
-    border: 2px dashed #2b6cb0;         /* Borda pontilhada azul */
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 16px;
+    margin: 24px 0;
+    padding: 20px;
+    background: #f7fafc;
+    border-radius: 16px;
+    border: 2px dashed #2b6cb0;
 }
 
-/* Itens do grid (apenas para demonstração) */
 .grid-item {
-    background-color: #ffffff;          /* Fundo branco */
-    padding: 20px;                      /* Espaçamento interno */
-    border-radius: 8px;                 /* Bordas arredondadas */
-    border: 1px solid #e2e8f0;          /* Borda cinza clarinha */
-    text-align: center;                 /* Centraliza o texto */
-    font-weight: 600;                   /* Semi-negrito */
-    color: #2b6cb0;                     /* Cor azul */
-    transition: all 0.3s ease;          /* Animação suave */
+    background: white;
+    padding: 18px;
+    border-radius: 10px;
+    border: 1px solid #e2e8f0;
+    text-align: center;
+    font-weight: 600;
+    color: #2b6cb0;
+    transition: all 0.3s;
 }
 
-/* Efeito ao passar o mouse sobre um item do grid */
 .grid-item:hover {
-    background-color: #2b6cb0;          /* Fundo azul */
-    color: #ffffff;                     /* Texto branco */
-    transform: scale(1.02);             /* Aumenta 2% (zoom) */
+    background: #2b6cb0;
+    color: white;
+    transform: scale(1.02);
 }
 
+/* ================================================================
+   SEÇÃO 13: BOTÃO DE CONTATO
+   ================================================================ */
 
-/* ==========================================================
-     🔘 BOTÃO DE CONTATO
-     ========================================================== */
-
-/* Classe .btn-contato para o botão */
 .btn-contato {
-    background-color: #2b6cb0;          /* Fundo azul */
-    color: #ffffff;                     /* Texto branco */
-    border: none;                       /* Remove a borda padrão */
-    padding: 14px 40px;                 /* Espaçamento interno */
-    font-size: 1.1rem;                  /* Tamanho da fonte */
-    font-weight: 600;                   /* Semi-negrito */
-    border-radius: 50px;                /* Bordas totalmente arredondadas (pilha) */
-    cursor: pointer;                    /* Cursor de mão ao passar o mouse */
-    transition: all 0.3s ease;          /* Animação suave */
-    margin-top: 20px;                   /* Margem superior */
-    box-shadow: 0 4px 12px rgba(43, 108, 176, 0.3); /* Sombra suave */
+    background: #2b6cb0;
+    color: white;
+    border: none;
+    padding: 14px 48px;
+    font-size: 1.1rem;
+    font-weight: 600;
+    border-radius: 50px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    margin-top: 16px;
+    box-shadow: 0 6px 20px rgba(43, 108, 176, 0.25);
 }
 
-/* 
-   REGRA: .btn-contato:hover
-   - Efeito ao passar o mouse sobre o botão (pseudo-classe :hover)
-   - Fundo amarelo (muda de cor)
-   - Cursor de clique (mãozinha)
-*/
 .btn-contato:hover {
-    background-color: #ecc94b;          /* Fundo amarelo */
-    color: #1a365d;                     /* Texto azul escuro */
-    transform: translateY(-3px);        /* Move o botão 3px para cima (flutua) */
-    box-shadow: 0 6px 20px rgba(236, 201, 75, 0.4); /* Sombra amarela */
+    background: #1a365d;
+    transform: translateY(-3px);
+    box-shadow: 0 8px 28px rgba(43, 108, 176, 0.35);
 }
 
+/* ================================================================
+   SEÇÃO 14: BOTÃO "MUDAR COR"
+   ================================================================ */
 
-/* ==========================================================
-     👣 RODAPÉ (FOOTER)
-     ========================================================== */
+#botao {
+    background: #2b6cb0;
+    color: white;
+    border: none;
+    padding: 12px 32px;
+    border-radius: 40px;
+    font-weight: 600;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: all 0.3s;
+    margin: 10px 0;
+}
 
-/* Estiliza o rodapé da página */
+#botao:hover {
+    background: #1a365d;
+    transform: scale(1.05);
+}
+
+/* ================================================================
+   SEÇÃO 15: CAIXA COLORIDA (INTERATIVA)
+   ================================================================ */
+
+#caixa {
+    width: 120px;
+    height: 120px;
+    background-color: blue;
+    border-radius: 16px;
+    margin: 16px auto;
+    transition: background-color 0.4s ease;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+/* ================================================================
+   SEÇÃO 16: LISTA NÃO ORDENADA
+   ================================================================ */
+
+#lista {
+    list-style: none;
+    padding: 0;
+    max-width: 300px;
+    margin: 16px auto;
+    text-align: left;
+}
+
+#lista li {
+    background: #f7fafc;
+    padding: 12px 20px;
+    border-bottom: 1px solid #e2e8f0;
+    border-radius: 6px;
+    margin-bottom: 6px;
+    transition: background 0.2s;
+}
+
+#lista li:hover {
+    background: #edf2f7;
+}
+
+/* ================================================================
+   SEÇÃO 17: RESUMO DIDÁTICO (GRID DE ELEMENTOS)
+   ================================================================ */
+
+.resumo-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+    gap: 12px;
+    margin-top: 16px;
+    text-align: left;
+}
+
+.resumo-item {
+    background: #f7fafc;
+    padding: 10px 14px;
+    border-radius: 8px;
+    border-left: 4px solid #2b6cb0;
+    font-size: 0.95rem;
+    transition: background 0.2s;
+}
+
+.resumo-item:hover {
+    background: #edf2f7;
+}
+
+.resumo-item strong {
+    color: #1a365d;
+    margin-right: 4px;
+}
+
+/* ================================================================
+   SEÇÃO 18: RODAPÉ (FOOTER)
+   ================================================================ */
+
 footer {
-    background-color: var(--cor-primaria);          /* Fundo azul escuro */
-    color: #ffffff;                     /* Texto branco */
-    padding: 30px 20px;                 /* Espaçamento interno */
-    text-align: center;                 /* Centraliza o texto */
+    background: #1a365d;
+    color: white;
+    padding: 30px 20px;
+    text-align: center;
 }
 
-/* Parágrafo dentro do rodapé */
 footer p {
-    font-size: 0.95rem;                 /* Tamanho da fonte (um pouco menor) */
-    opacity: 0.85;                      /* Opacidade (85% visível) */
-    line-height: 1.6;                   /* Altura da linha (espaçamento) */
+    font-size: 0.95rem;
+    opacity: 0.85;
+    line-height: 1.6;
 }
 
+/* ================================================================
+   SEÇÃO 19: RESPONSIVIDADE
+   ================================================================ */
 
-/* ==========================================================
-     📱 RESPONSIVIDADE (adaptação para telas menores)
-     ========================================================== */
-
-/*
-   📌 O que é responsividade?
-   É a capacidade do site se adaptar a diferentes tamanhos de tela.
-   Usamos @media queries para aplicar estilos diferentes conforme
-   a largura da tela (breakpoints).
-*/
-
-/*
-   TABLET (768px ou menos)
-   Quando a tela for menor que 768px, estes estilos se aplicam
-*/
+/* Tablets e telas médias */
 @media (max-width: 768px) {
-    body {
-        padding: 10px;           /* Menos espaçamento nas bordas */
-    }
-
-    .wrapper {
-        border-radius: 12px;     /* Bordas um pouco menores */
-    }
-
-    header {
-        padding: 30px 20px;      /* Menos espaçamento no cabeçalho */
-    }
-
     header h1 {
-        font-size: 1.8rem;       /* Título menor */
+        font-size: 2rem;
     }
 
-    header p {
-        font-size: 1rem;         /* Subtítulo menor */
-    }
-
-    /* Menu vertical em telas pequenas */
     .menu {
-        flex-direction: column;  /* Coloca os itens em coluna (um embaixo do outro) */
-        align-items: center;     /* Centraliza os itens */
-        gap: 8px;               /* Menos espaço entre os itens */
+        gap: 16px;
+        flex-direction: column;
+        align-items: center;
     }
 
     .menu li a {
-        width: 100%;             /* O link ocupa a largura toda */
-        text-align: center;      /* Centraliza o texto */
-        padding: 12px 30px;      /* Mais espaço para toque em celular */
+        width: 100%;
+        text-align: center;
     }
 
-    main {
-        padding: 25px 20px;      /* Menos espaçamento no conteúdo */
+    .cards-servicos {
+        grid-template-columns: 1fr 1fr;
     }
 
-    h2 {
-        font-size: 24px;         /* Título menor */
-    }
-
-    section p {
-        font-size: 1rem;         /* Texto menor */
-    }
-
-    /* Grid com uma coluna em telas pequenas */
     .grid-container {
-        grid-template-columns: 1fr; /* Apenas 1 coluna (empilha os itens) */
+        grid-template-columns: 1fr;
+    }
+
+    .resumo-grid {
+        grid-template-columns: 1fr 1fr;
     }
 }
 
-/*
-   CELULAR (480px ou menos)
-   Para telas muito pequenas (celulares)
-*/
+/* Smartphones */
 @media (max-width: 480px) {
-    body {
-        padding: 5px;            /* Quase sem espaçamento nas bordas */
-    }
-
-    .wrapper {
-        border-radius: 10px;     /* Bordas menores */
-    }
-
-    header {
-        padding: 20px 15px;      /* Cabeçalho mais compacto */
-    }
-
     header h1 {
-        font-size: 1.4rem;       /* Título ainda menor */
+        font-size: 1.5rem;
     }
 
-    header p {
-        font-size: 0.9rem;       /* Subtítulo menor */
+    .cards-servicos {
+        grid-template-columns: 1fr;
     }
 
-    nav {
-        padding: 10px 15px;      /* Menu mais compacto */
-    }
-
-    .menu li a {
-        padding: 10px 20px;      /* Botões do menu menores */
-        font-size: 0.95rem;      /* Texto um pouco menor */
-    }
-
-    main {
-        padding: 20px 15px;      /* Conteúdo mais compacto */
-    }
-
-    h2 {
-        font-size: 20px;         /* Título menor */
-    }
-
-    section p {
-        font-size: 0.95rem;      /* Texto menor */
-    }
-
-    .imagem-container img {
-        max-width: 200px;        /* Imagem menor em celulares */
+    .resumo-grid {
+        grid-template-columns: 1fr;
     }
 
     .btn-contato {
-        padding: 12px 30px;      /* Botão menor */
-        font-size: 1rem;         /* Texto do botão menor */
-        width: 100%;             /* Ocupa a largura toda (botão cheio) */
-    }
-
-    footer {
-        padding: 20px 15px;      /* Rodapé mais compacto */
-    }
-
-    footer p {
-        font-size: 0.85rem;      /* Texto do rodapé menor */
-    }
-
-    .grid-container {
-        padding: 10px;           /* Grid com menos espaçamento */
-        gap: 10px;              /* Espaço menor entre itens */
-    }
-
-    .grid-item {
-        padding: 12px;           /* Itens do grid menores */
-        font-size: 0.9rem;       /* Texto menor */
+        width: 100%;
     }
 }
-
-/*Definir	uma	paleta	de	cores em	variáveis	globais	evita	a	repetição	
-de	valores	ao	longo	do	código	e	facilita alterações	consistentes*/
-:root {
-    --cor-primaria: #2b6cb0; /* Azul */
-    --cor-secundaria: #ecc94b; /* Amarelo */
-    --cor-fundo: #f4f7fa; /* Cinza clarinho */
-    --cor-texto: #2d3748; /* Cinza escuro */
-}
-
-

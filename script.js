@@ -148,3 +148,16 @@ if (lista) {
 // MENSAGEM NO CONSOLE PARA INDICAR QUE O SCRIPT FOI CARREGADO
 // ====================================================================
 console.log('✅ script.js carregado com sucesso!');
+
+//Rolagem	de	uma	página	pode	acionar	mudanças	visuais	ou	carregar	conteúdo adicional
+window.addEventListener('scroll', function() {
+    // Exemplo: alterar a cor do cabeçalho ao rolar a página
+    const cabecalho = document.querySelector('header');
+    if (cabecalho) {
+        if (window.scrollY > 50) {
+            cabecalho.style.backgroundColor = '#333';
+        } else {
+            cabecalho.style.backgroundColor = 'transparent';
+        }
+    }
+});     

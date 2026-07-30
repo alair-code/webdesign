@@ -153,3 +153,24 @@ console.log('✅ script.js carregado com sucesso!');
 window.addEventListener('scroll', function() {
      console.log('Rolagem detectada! Posição Y:', window.scrollY);
 }); 
+
+//Alterar	a	cor	de fundo	de	um	elemento	ao	passar	o	mouse	sobre	ele
+const caixa = document.getElementById('caixa');
+caixa.addEventListener('mouseover', function() {
+    caixa.style.backgroundColor = 'green';
+});
+caixa.addEventListener('mouseout', function() {
+    caixa.style.backgroundColor = 'blue';
+}); 
+
+//Formulário	de	contato:	verificar	se	o	campo	nome	está	preenchido	antes	de	enviar
+document.getElementById('form-contato').addEventListener('submit', function(event) {
+    event.preventDefault(); // Impede o envio do formulário
+    const nome = document.getElementById('nome').value.trim();
+    if (nome === '') {
+        alert('Por favor, preencha o campo Nome.');
+    } else {
+        alert(`Obrigado, ${nome}! Sua mensagem foi enviada.`);
+        document.getElementById('form-contato').reset(); // Limpa o formulário
+    }
+}); 
